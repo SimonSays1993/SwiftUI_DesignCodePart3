@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2D001DB127A820F300A87F02 /* Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D001DB027A820F300A87F02 /* Buttons.swift */; };
 		2D1E117B278693850074A414 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D1E117A278693850074A414 /* MenuView.swift */; };
 		2D34100C27A399BD00CA4BB1 /* CourseDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D34100B27A399BD00CA4BB1 /* CourseDetail.swift */; };
 		2D34101527A41CD800CA4BB1 /* Contentful in Frameworks */ = {isa = PBXBuildFile; productRef = 2D34101427A41CD800CA4BB1 /* Contentful */; };
@@ -39,6 +40,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2D001DB027A820F300A87F02 /* Buttons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Buttons.swift; sourceTree = "<group>"; };
 		2D1E117A278693850074A414 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		2D34100B27A399BD00CA4BB1 /* CourseDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseDetail.swift; sourceTree = "<group>"; };
 		2D34101627A41EF000CA4BB1 /* CourseStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseStore.swift; sourceTree = "<group>"; };
@@ -147,6 +149,7 @@
 				2D3D2C9D278DA77000B02FC0 /* UpdateDetail.swift */,
 				2D3D2C9B278DA04000B02FC0 /* UpdateList.swift */,
 				2DB46E432791B609008C9D1A /* WatchRingsView.swift */,
+				2D001DB027A820F300A87F02 /* Buttons.swift */,
 			);
 			name = Views;
 			path = "DesignCode Part 3/SwiftUI_Part3_DesignCode/Views";
@@ -261,6 +264,7 @@
 				2D568E5E27A42D5000FBC3FB /* BlurView.swift in Sources */,
 				2D48BB18277E2ACA00A0C5E4 /* CertificateView.swift in Sources */,
 				2D34101727A41EF000CA4BB1 /* CourseStore.swift in Sources */,
+				2D001DB127A820F300A87F02 /* Buttons.swift in Sources */,
 				2D48BB1C277E5FA200A0C5E4 /* BackCardView.swift in Sources */,
 				2DB46E122791B1C9008C9D1A /* ShawdowModifier.swift in Sources */,
 				2D48BB1E2780D44100A0C5E4 /* TitleView.swift in Sources */,
