@@ -40,6 +40,7 @@
 		2DF493A327B088530032987D /* RectangleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DF493A227B088530032987D /* RectangleButton.swift */; };
 		2DF493A527B08C440032987D /* CircleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DF493A427B08C440032987D /* CircleButton.swift */; };
 		2DF493A727B162C20032987D /* PayButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DF493A627B162C20032987D /* PayButton.swift */; };
+		2DF493AA27B21EAD0032987D /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DF493A927B21EAD0032987D /* LoginView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,6 +77,7 @@
 		2DF493A227B088530032987D /* RectangleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectangleButton.swift; sourceTree = "<group>"; };
 		2DF493A427B08C440032987D /* CircleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleButton.swift; sourceTree = "<group>"; };
 		2DF493A627B162C20032987D /* PayButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayButton.swift; sourceTree = "<group>"; };
+		2DF493A927B21EAD0032987D /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +122,7 @@
 				2DB46E102791B1BA008C9D1A /* Modifiers */,
 				2D48BB0E277DF31D00A0C5E4 /* Preview Content */,
 				2D48BB16277E2ABD00A0C5E4 /* Views */,
+				2DF493A827B21EA50032987D /* LoginView */,
 				2D34101627A41EF000CA4BB1 /* CourseStore.swift */,
 				2D568E5D27A42D5000FBC3FB /* BlurView.swift */,
 			);
@@ -180,6 +183,14 @@
 				2DF493A627B162C20032987D /* PayButton.swift */,
 			);
 			path = Buttons;
+			sourceTree = "<group>";
+		};
+		2DF493A827B21EA50032987D /* LoginView */ = {
+			isa = PBXGroup;
+			children = (
+				2DF493A927B21EAD0032987D /* LoginView.swift */,
+			);
+			path = LoginView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -262,6 +273,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2D48BB2027835DC700A0C5E4 /* AppDelegate.swift in Sources */,
+				2DF493AA27B21EAD0032987D /* LoginView.swift in Sources */,
 				2D3D2CA0278DADA800B02FC0 /* UpdateStore.swift in Sources */,
 				2D3D2C9C278DA04000B02FC0 /* UpdateList.swift in Sources */,
 				2D3D2CA2278DB86A00B02FC0 /* TabBar.swift in Sources */,
