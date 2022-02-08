@@ -37,6 +37,9 @@
 		2DB46E442791B609008C9D1A /* WatchRingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DB46E432791B609008C9D1A /* WatchRingsView.swift */; };
 		2DB46E462796476F008C9D1A /* CourseList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DB46E452796476F008C9D1A /* CourseList.swift */; };
 		2DD932A2278F4AF70078CE37 /* RingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD932A1278F4AF70078CE37 /* RingView.swift */; };
+		2DF493A327B088530032987D /* RectangleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DF493A227B088530032987D /* RectangleButton.swift */; };
+		2DF493A527B08C440032987D /* CircleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DF493A427B08C440032987D /* CircleButton.swift */; };
+		2DF493A727B162C20032987D /* PayButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DF493A627B162C20032987D /* PayButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +73,9 @@
 		2DB46E432791B609008C9D1A /* WatchRingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchRingsView.swift; sourceTree = "<group>"; };
 		2DB46E452796476F008C9D1A /* CourseList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseList.swift; sourceTree = "<group>"; };
 		2DD932A1278F4AF70078CE37 /* RingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RingView.swift; sourceTree = "<group>"; };
+		2DF493A227B088530032987D /* RectangleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectangleButton.swift; sourceTree = "<group>"; };
+		2DF493A427B08C440032987D /* CircleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleButton.swift; sourceTree = "<group>"; };
+		2DF493A627B162C20032987D /* PayButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +139,7 @@
 		2D48BB16277E2ABD00A0C5E4 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				2DF493A127B0883E0032987D /* Buttons */,
 				2D3D2C952788731000B02FC0 /* AvatarView.swift */,
 				2D48BB1B277E5FA200A0C5E4 /* BackCardView.swift */,
 				2D48BB232783790100A0C5E4 /* BottomCardView.swift */,
@@ -149,7 +156,6 @@
 				2D3D2C9D278DA77000B02FC0 /* UpdateDetail.swift */,
 				2D3D2C9B278DA04000B02FC0 /* UpdateList.swift */,
 				2DB46E432791B609008C9D1A /* WatchRingsView.swift */,
-				2D001DB027A820F300A87F02 /* Buttons.swift */,
 			);
 			name = Views;
 			path = "DesignCode Part 3/SwiftUI_Part3_DesignCode/Views";
@@ -163,6 +169,17 @@
 			);
 			name = Modifiers;
 			path = "DesignCode Part 3/SwiftUI_Part3_DesignCode/Modifiers";
+			sourceTree = "<group>";
+		};
+		2DF493A127B0883E0032987D /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				2D001DB027A820F300A87F02 /* Buttons.swift */,
+				2DF493A227B088530032987D /* RectangleButton.swift */,
+				2DF493A427B08C440032987D /* CircleButton.swift */,
+				2DF493A627B162C20032987D /* PayButton.swift */,
+			);
+			path = Buttons;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -252,6 +269,7 @@
 				2D48BB242783790100A0C5E4 /* BottomCardView.swift in Sources */,
 				2DD932A2278F4AF70078CE37 /* RingView.swift in Sources */,
 				2D34100C27A399BD00CA4BB1 /* CourseDetail.swift in Sources */,
+				2DF493A727B162C20032987D /* PayButton.swift in Sources */,
 				2D3D2C962788731000B02FC0 /* AvatarView.swift in Sources */,
 				2D48BB2227835DD900A0C5E4 /* SceneDelegate.swift in Sources */,
 				2D3D2C982788751600B02FC0 /* HomeView.swift in Sources */,
@@ -265,10 +283,12 @@
 				2D48BB18277E2ACA00A0C5E4 /* CertificateView.swift in Sources */,
 				2D34101727A41EF000CA4BB1 /* CourseStore.swift in Sources */,
 				2D001DB127A820F300A87F02 /* Buttons.swift in Sources */,
+				2DF493A527B08C440032987D /* CircleButton.swift in Sources */,
 				2D48BB1C277E5FA200A0C5E4 /* BackCardView.swift in Sources */,
 				2DB46E122791B1C9008C9D1A /* ShawdowModifier.swift in Sources */,
 				2D48BB1E2780D44100A0C5E4 /* TitleView.swift in Sources */,
 				2DB46E142791B27F008C9D1A /* FontModifier.swift in Sources */,
+				2DF493A327B088530032987D /* RectangleButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
