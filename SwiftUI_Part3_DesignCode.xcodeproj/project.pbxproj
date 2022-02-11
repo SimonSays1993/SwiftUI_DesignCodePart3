@@ -190,7 +190,8 @@
 			children = (
 				2DF493A927B21EAD0032987D /* LoginView.swift */,
 			);
-			path = LoginView;
+			name = LoginView;
+			path = "DesignCode Part 3/SwiftUI_Part3_DesignCode/LoginView";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
