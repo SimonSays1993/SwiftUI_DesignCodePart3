@@ -11,6 +11,7 @@ struct Home: View {
     @State var showProfile = false
     @State var viewState = CGSize.zero
     @State var showContent = false
+    @EnvironmentObject var user: UserStore
     
     var body: some View {
         ZStack {
@@ -58,6 +59,28 @@ struct Home: View {
                     }
                 )
             
+            if user.showLogin {
+                ZStack {
+                    LoginView()
+                    
+                    VStack {
+                        HStack {
+                            Spacer()
+                            Image(systemName: "xmark")
+                                .frame(width: 36, height: 36)
+                                .foregroundColor(.white)
+                                .background(Color.black)
+                                .clipShape(Circle())
+                        }
+                        Spacer()
+                    }
+                    .padding()
+                    .onTapGesture {
+                        self.user.showLogin = false
+                    }
+                }
+            }
+            
             if showContent {
                 BlurView(style: .systemMaterial).edgesIgnoringSafeArea(.all)
                 ContentView()
@@ -86,6 +109,8 @@ struct Home: View {
 
 struct Home_Previews: PreviewProvider {
     static var previews: some View {
-        Home().environment(\.colorScheme, .dark)
+        Home()
+            //.environment(\.colorScheme, .dark)
+            .environmentObject(UserStore())
     }
 }
