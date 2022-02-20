@@ -36,7 +36,7 @@ struct Home: View {
                 .scaleEffect(showProfile ? 0.9 : 1.0)
                 .animation(.spring())
                 .edgesIgnoringSafeArea(.all)
-            
+             
             MenuView(showProfile: $showProfile)
                 .background(Color.black.opacity(0.001))
                 .offset(y: showProfile ? 0 : UIScreen.main.bounds.height)
