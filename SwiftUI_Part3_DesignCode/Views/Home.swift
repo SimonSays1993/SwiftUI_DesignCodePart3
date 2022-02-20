@@ -37,7 +37,7 @@ struct Home: View {
                 .animation(.spring())
                 .edgesIgnoringSafeArea(.all)
             
-            MenuView()
+            MenuView(showProfile: $showProfile)
                 .background(Color.black.opacity(0.001))
                 .offset(y: showProfile ? 0 : UIScreen.main.bounds.height)
                 .offset(y: viewState.height)
