@@ -177,7 +177,7 @@ struct CoverView: View {
             .offset(x: viewState.width / 15, y: viewState.height / 15)
             
             Text("80 hours of courses for SWiftUI, React and design tools")
-                .font(.subheadline)
+                .font(.subheadline).bold()
                 .frame(width: 250)
                 .offset(x: viewState.width / 20, y: viewState.height / 20)
             
@@ -194,7 +194,6 @@ struct CoverView: View {
                     .rotationEffect(Angle(degrees: show ? 360 + 90 : 90))
                     .blendMode(.plusDarker)
                     .animation(Animation.linear(duration: 120).repeatForever(autoreverses: false))
-                    //.animation(nil)
                     .onAppear {
                         self.show = true
                     }
@@ -203,7 +202,6 @@ struct CoverView: View {
                     .offset(x: -200, y: -250)
                     .rotationEffect(Angle(degrees: show ? 360 : 0), anchor: .leading)
                     .blendMode(.overlay)
-                    //.animation(nil)
                     .animation(Animation.linear(duration: 120).repeatForever(autoreverses: false))
             }
         )

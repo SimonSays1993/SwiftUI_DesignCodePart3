@@ -29,7 +29,8 @@ struct ContentView: View {
             
             //This is are background
             BackCardView()
-                .frame(width: showBottomCard ? 300 : 340, height: 220)
+                .frame(maxWidth: showBottomCard ? 300 : 340)
+                .frame(height: 220)
                 .background(show ? Color("card3") : Color("card4"))
                 .cornerRadius(20.0)
                 .shadow(radius: 20.0)
@@ -44,7 +45,8 @@ struct ContentView: View {
                 .animation(.easeInOut(duration: 0.5))
             
             BackCardView()
-                .frame(width: 340, height: 220)
+                .frame(maxWidth: 340)
+                .frame(height: 220)
                 .background(show ? Color("card4") : Color("card3"))
                 .cornerRadius(20.0)
                 .shadow(radius: 20.0)
@@ -60,7 +62,8 @@ struct ContentView: View {
             
             //This is are foreground
             CertificateView()
-                .frame(width: showBottomCard ? 375 : 340, height: 220)
+                .frame(maxWidth: showBottomCard ? 375 : 340)
+                .frame(height: 220)
                 .background(Color.black)
                 .clipShape(RoundedRectangle(cornerRadius: showBottomCard ? 30 : 20, style: .continuous))
                 .shadow(radius: 20.0)
@@ -84,34 +87,39 @@ struct ContentView: View {
                     }
                 )
             
-            BottomCardView(show: $showBottomCard)
-                .offset(x: 0, y: showBottomCard ? 360 : 1000)
-                .offset(y: bottomCardState.height)
-                .blur(radius: show ? 20 : 0)
-                .animation(.timingCurve(0.2, 0.8, 0.2, 1, duration: 0.8))
-                .gesture(
-                    DragGesture().onChanged { value in
-                        self.bottomCardState = value.translation
-                        if self.showFull {
-                            self.bottomCardState.height += -300
-                        }
-                        if self.bottomCardState.height < -300 {
-                            self.bottomCardState.height = -300
-                        }
-                    }
-                        .onEnded { value in
-                            if self.bottomCardState.height > 50 {
-                                self.showBottomCard = false
+            GeometryReader { geometryBounds in
+                BottomCardView(show: $showBottomCard)
+                    .offset(x: 0, y: showBottomCard ? geometryBounds.size.height / 2 :
+                                geometryBounds.size.height +
+                                geometryBounds.safeAreaInsets.top +
+                                geometryBounds.safeAreaInsets.bottom)
+                    .offset(y: bottomCardState.height)
+                    .blur(radius: show ? 20 : 0)
+                    .animation(.timingCurve(0.2, 0.8, 0.2, 1, duration: 0.8))
+                    .gesture(
+                        DragGesture().onChanged { value in
+                            self.bottomCardState = value.translation
+                            if self.showFull {
+                                self.bottomCardState.height += -300
                             }
-                            if (self.bottomCardState.height < -100 && !self.showFull) || (self.bottomCardState.height < -250 && self.showFull) {
+                            if self.bottomCardState.height < -300 {
                                 self.bottomCardState.height = -300
-                                self.showFull = true
-                            } else {
-                                self.bottomCardState = .zero
-                                self.showFull = false
                             }
                         }
+                            .onEnded { value in
+                                if self.bottomCardState.height > 50 {
+                                    self.showBottomCard = false
+                                }
+                                if (self.bottomCardState.height < -100 && !self.showFull) || (self.bottomCardState.height < -250 && self.showFull) {
+                                    self.bottomCardState.height = -300
+                                    self.showFull = true
+                                } else {
+                                    self.bottomCardState = .zero
+                                    self.showFull = false
+                                }
+                            }
                 )
+            }
         }
     }
 }
@@ -119,5 +127,7 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+            //lets us see a fixed layout for other dimenses instead of having to build  sim all the time. 
+            .previewLayout(.fixed(width: 320, height: 667))
     }
 }

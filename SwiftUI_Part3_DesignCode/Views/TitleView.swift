@@ -18,6 +18,9 @@ struct TitleView: View {
             }
             .padding()
             Image("Background1")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(maxWidth: 375)
             Spacer()
         }
     }
