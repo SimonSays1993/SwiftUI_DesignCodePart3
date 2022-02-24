@@ -16,7 +16,7 @@ struct BackCardView: View {
     }
 }
 
-struct BackgroundView_Previews: PreviewProvider {
+struct BackCardView_Previews: PreviewProvider {
     static var previews: some View {
         BackCardView()
     }

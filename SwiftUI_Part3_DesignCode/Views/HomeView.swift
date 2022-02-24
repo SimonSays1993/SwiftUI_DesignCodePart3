@@ -43,7 +43,7 @@ struct HomeView: View {
                         WatchRingsView()
                             .padding(.horizontal, 30)
                             .padding(.bottom, 35)
-                            .onTapGesture {
+                            .onTapGesture { 
                                 self.showContent = true
                             }
                     }
@@ -53,7 +53,7 @@ struct HomeView: View {
                             ForEach(sectionData) { item in
                                 GeometryReader { geometry in
                                     SectionView(section: item)
-                                        .rotation3DEffect(Angle(degrees: geometry.frame(in: .global).minX - 30) / -20,
+                                        .rotation3DEffect(Angle(degrees: geometry.frame(in: .global).minX - 30) / -getAngleMultiplier(bounds: geometryBounds),
                                                           axis: (x: 0, y: 10, z: 0))
                                 }
                                 .frame(width: 275, height: 275)
@@ -79,6 +79,14 @@ struct HomeView: View {
                 }
                 .frame(width: geometryBounds.size.width)
             }
+        }
+    }
+    
+    func getAngleMultiplier(bounds: GeometryProxy) -> Double {
+        if bounds.size.width > 500 {
+            return 80.0
+        } else {
+            return 20.0
         }
     }
 }

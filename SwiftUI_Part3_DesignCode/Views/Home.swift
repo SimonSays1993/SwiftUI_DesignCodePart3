@@ -18,24 +18,18 @@ struct Home: View {
             Color("background2")
                 .edgesIgnoringSafeArea(.all)
             
-            HomeView(showProfile: $showProfile, showContent: $showContent)
-                .padding(.top, 44) //44 is the size of the top padding bar
-                .background(
-                    VStack {
-                        LinearGradient(gradient: Gradient(colors: [Color("background2"), Color("background1")]),
-                                       startPoint: .top, endPoint: .bottom)
-                            .frame(height: 200)
-                        Spacer()
-                    }
-                    .background(Color("background1"))
-                )
-                .clipShape(RoundedRectangle(cornerRadius: 30, style: .continuous))
-                .shadow(color: .black.opacity(0.2), radius: 20, x: 0, y: 20)
+            HomeBackgroundView(showProfile: $showProfile)
                 .offset(y: showProfile ? -430 : 0)
                 .rotation3DEffect(Angle(degrees: showProfile ? Double(viewState.height) / 10 - 10 : 0), axis: (x: 10, y: 0, z: 0))
                 .scaleEffect(showProfile ? 0.9 : 1.0)
                 .animation(.spring())
                 .edgesIgnoringSafeArea(.all)
+            
+            HomeView(showProfile: $showProfile, showContent: $showContent)
+                .offset(y: showProfile ? -430 : 0)
+                .rotation3DEffect(Angle(degrees: showProfile ? Double(viewState.height) / 10 - 10 : 0), axis: (x: 10, y: 0, z: 0))
+                .scaleEffect(showProfile ? 0.9 : 1.0)
+                .animation(.spring())
              
             MenuView(showProfile: $showProfile)
                 .background(Color.black.opacity(0.001))
