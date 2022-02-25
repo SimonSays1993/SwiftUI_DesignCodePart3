@@ -26,11 +26,11 @@ struct CourseList: View {
                         
                         ForEach(store.courses.indices, id: \.self) { index in
                             GeometryReader { geometry in
-                                CourseView(show: $store.courses[index].show,
-                                           active: $active,
-                                           activeIndex: $activeIndex,
-                                           bounds: geometryBounds ,
-                                           course: store.courses[index], index: index)
+                                CourseView(show: self.$store.courses[index].show,
+                                           active: self.$active,
+                                           activeIndex: self.$activeIndex,
+                                           bounds: geometryBounds,
+                                           course: self.store.courses[index], index: index)
                                     .offset(y: self.store.courses[index].show ? -geometry.frame(in: .global).minY : 0)
                                     .opacity(self.activeIndex != index && self.active ? 0 : 1)
                                     .scaleEffect(self.activeIndex != index && self.active ? 0.5 : 1)
@@ -71,6 +71,8 @@ struct CourseView: View {
     @Binding var activeIndex: Int
     var bounds: GeometryProxy
     
+    @State var isScrollable = false
+    
     var course: Course
     var index: Int
     
@@ -86,10 +88,11 @@ struct CourseView: View {
                 
                 Text("Minimal coding experience required, such as in HTML and CSS. Please note that Xcode 11 and Catalina are essential. Once you get everything installed, it'll get a lot friendlier! I added a bunch of troubleshoots at the end of this page to help you navigate the issues you might encounter.")
             }
+            .animation(nil)
             .padding(30)
             .frame(maxWidth: show ? .infinity : screen.width - 60, maxHeight: show ? .infinity : 280, alignment: .top)
             .offset(y: show ? 460 : 0)
-            .background(Color("background2"))
+            .background(Color("background1"))
             .clipShape(
                 RoundedRectangle(
                     cornerRadius: show ? getCardCornerRadius(bounds: bounds) : 30,
@@ -148,26 +151,31 @@ struct CourseView: View {
                 } else {
                     self.activeIndex = -1
                 }
+                
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.7) {
+                    self.isScrollable = true
+                }
             }
             
             if show {
-//                CourseDetail(course: course, show: $show, active: $active, activeIndex: $activeIndex)
-//                    .background(Color.white)
-//                    .animation(nil)
+                CourseDetail(course: course, show: $show, active: $active, activeIndex: $activeIndex, isScrollable: $isScrollable, bounds: bounds)
+                    .background(Color.white)
+                    .clipShape(RoundedRectangle(cornerRadius: show ? getCardCornerRadius(bounds: bounds) : 30, style: .continuous))
+                    .animation(nil)
             }
         }
         .frame(height: show ? bounds.size.height + bounds.safeAreaInsets.top + bounds.safeAreaInsets.bottom : 280)
         .animation(.spring(response: 0.6, dampingFraction: 0.9, blendDuration: 0))
         .edgesIgnoringSafeArea(.all)
     }
-    
-    func getCardCornerRadius(bounds: GeometryProxy) -> CGFloat {
-        //This means if the screen is not small and if the screen doesn't have a notch which is why we have 44 in terms of the status bar
-        if bounds.size.width < 712 && bounds.safeAreaInsets.top < 44 {
-            return 0
-        }
-        return 30
+}
+
+func getCardCornerRadius(bounds: GeometryProxy) -> CGFloat {
+    //This means if the screen is not small and if the screen doesn't have a notch which is why we have 44 in terms of the status bar
+    if bounds.size.width < 712 && bounds.safeAreaInsets.top < 44 {
+        return 0
     }
+    return 30
 }
 
 struct Course: Identifiable {
